@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
+
 # Connects to the server using the private key ~/.ssh/school
-
-# Replace with your actual server IP from ALU
-SERVER_IP="54.211.178.57"
-
-ssh -i ~/.ssh/school ubuntu@$SERVER_IP
+ssh -i ~/.ssh/school ubuntu@54.211.178.57
