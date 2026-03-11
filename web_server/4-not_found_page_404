@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
-# Configures Nginx with a custom 404 page
+# Configures Nginx with a custom 404 page containing Ceci n'est pas une page
 apt-get update -y
 apt-get install -y nginx
 echo "Holberton School for the win!" > /var/www/html/index.html
 echo "Ceci n'est pas une page" > /var/www/html/404.html
-sed -i '/server_name _;/a\\terror_page 404 /404.html;' /etc/nginx/sites-enabled/default
+sed -i '/^\s*location \/ {/i\\terror_page 404 /404.html;\n\tlocation = /404.html {\n\t\tinternal;\n\t}\n' /etc/nginx/sites-enabled/default
 service nginx restart
