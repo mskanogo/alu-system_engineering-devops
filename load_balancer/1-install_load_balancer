@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Installs and configures HAProxy with round-robin load balancing
+# Installs and configures HAproxy on lb-01 server
 apt-get update -y
-apt-get install -y haproxy
+apt-get install haproxy -y
 
-cat > /etc/haproxy/haproxy.cfg << 'EOF'
+cat > /etc/haproxy/haproxy.cfg << 'HAPROXY'
 global
     log /dev/log local0
     maxconn 2048
@@ -16,9 +16,9 @@ defaults
     mode http
     option httplog
     option dontlognull
-    timeout connect 5000ms
-    timeout client  50000ms
-    timeout server  50000ms
+    timeout connect 5000
+    timeout client 50000
+    timeout server 50000
 
 frontend http_front
     bind *:80
@@ -26,8 +26,8 @@ frontend http_front
 
 backend http_back
     balance roundrobin
-    server 7023-web-01 54.211.178.57:80 check
-    server 7023-web-02 34.230.46.175:80 check
-EOF
+    server 7023-web-01 34.227.15.242:80 check
+    server 7023-web-02 13.222.62.164:80 check
+HAPROXY
 
 service haproxy restart
