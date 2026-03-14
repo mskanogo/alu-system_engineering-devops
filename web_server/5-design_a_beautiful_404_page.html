@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Not Found</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #1a1a2e;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            padding: 40px;
+        }
+        h1 {
+            font-size: 150px;
+            color: #e94560;
+            animation: bounce 1s infinite alternate;
+        }
+        @keyframes bounce {
+            from { transform: translateY(0px); }
+            to { transform: translateY(-20px); }
+        }
+        h2 {
+            font-size: 30px;
+            margin: 20px 0;
+            color: #e94560;
+        }
+        p {
+            font-size: 18px;
+            color: #a8a8b3;
+            margin: 10px 0;
+        }
+        a {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            background-color: #e94560;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+        }
+        a:hover {
+            background-color: #c73652;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>404</h1>
+        <h2>Ceci n'est pas une page</h2>
+        <p>The page you are looking for does not exist.</p>
+        <p>It may have been moved or deleted.</p>
+        <a href="/">Go Back Home</a>
+    </div>
+</body>
+</html>
+
